@@ -19,3 +19,44 @@ users = [
 Faite un menu permettant avec un item hom cliquable pour revenir sur la page d'accueil, depuis n'importe quelle page.
 
 Chaque nom d'user sur la page d'accueil est un lien cliquable qui affiche sa description.
+
+
+## Installation de SQLITE
+
+Avec conda vous pouvez installer sqlite
+
+```python
+conda install sqlite
+```
+
+Créez la structure de données, dans la base de données (fichier) sqlite.db
+
+```sql
+CREATE TABLE `users` 
+(
+    `id` INTEGER PRIMARY KEY, 
+    `name` VARCHAR(100) NOT NULL, 
+    `description` TEXT
+);
+```
+
+En utilisant le module sqlite déjà installé dans un fichier install.py, exécuté en Python, insérez les données  suivantes dans la table users.
+
+Indications :
+
+```python
+import sqlite3
+
+database = './sqlite.db'
+db = sqlite3.connect(database) # connection à la base de donnnées
+
+cur = db.query( query, args )
+
+# vérifiez que les données sont insérées 
+
+print(cur.fetchall())
+
+# fermer la connexion 
+cur.close()
+
+```
