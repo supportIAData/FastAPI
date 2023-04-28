@@ -6,3 +6,5 @@ users = [
     { "id" : 5, "name" : "Bernard", "description" : "Phil: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
     { "id" : 6, "name" : "Marin", "description" : "Phil: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
 ]
+
+rates = [1, 2, 3]

@@ -60,3 +60,9 @@ print(cur.fetchall())
 cur.close()
 
 ```
+
+## 03 Exercice
+
+Créez un modèle qui vous permet d'afficher avec SQLALchemy les utilisateurs de notre table users.
+
+Indications : aidez-vous de la documentation [alchemy](https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/quickstart/#query-the-data)
