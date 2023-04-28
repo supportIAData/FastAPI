@@ -3,9 +3,9 @@ from flask import Flask, render_template
 app = Flask(__name__, template_folder='webapp/templates')
 
 users = [
-    { "id" : 1, "name" : "Alan" },
-    { "id" : 2, "name" : "Alice" },
-    { "id" : 3, "name" : "Phil" },
+    { "id" : 1, "name" : "Alan", "description" : "Alan: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
+    { "id" : 2, "name" : "Alice", "description" : "Alice: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
+    { "id" : 3, "name" : "Phil", "description" : "Phil: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
 ]
 
 @app.route("/home")

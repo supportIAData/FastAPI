@@ -13,3 +13,9 @@ users = [
     { id : 3, name : "Phil" },
 ]
 ```
+
+## 02 Exercice navigation
+
+Faite un menu permettant avec un item hom cliquable pour revenir sur la page d'accueil, depuis n'importe quelle page.
+
+Chaque nom d'user sur la page d'accueil est un lien cliquable qui affiche sa description.
