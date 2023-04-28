@@ -50,7 +50,7 @@ import sqlite3
 database = './sqlite.db'
 db = sqlite3.connect(database) # connection à la base de donnnées
 
-cur = db.query( query, args )
+cur = db.execute( query, args )
 
 # vérifiez que les données sont insérées 
 
