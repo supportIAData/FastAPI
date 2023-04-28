@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user %}
+    <p>{{user['description']}}</p>
+{% else %}
+    <p>Aucun user</p>
+{% endif %}
+{% endblock %}
