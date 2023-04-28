@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 
-
 app = Flask(__name__, template_folder='webapp/templates')
 
 users = [
@@ -19,7 +18,6 @@ def hello():
 def category():
     return "<p>Hello Category</p>"
 
-
 @app.route("/user/<id>")
 def user(id):
-    return "<p>User</p>"
+    return f"<p>User{id}</p>"
