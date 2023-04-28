@@ -8,9 +8,9 @@ Créez une route users pour afficher les utilisateurs sur une page users.html, u
 
 ```python
 users = [
-    { id : 1, name : "Alan" },
-    { id : 2, name : "Alice" },
-    { id : 3, name : "Phil" },
+    { "id" : 1, "name" : "Alan", "description" : "Alan: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
+    { "id" : 2, "name" : "Alice", "description" : "Alice: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
+    { "id" : 3, "name" : "Phil", "description" : "Phil: Lorem ipsum dolor sit amet consectetur adipisicing elit" },
 ]
 ```
 
