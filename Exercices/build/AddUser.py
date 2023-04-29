@@ -1,4 +1,6 @@
-
+"""
+Iterator prepare data to hydrate users table
+"""
 class AddUser:
     def __init__(self, users):
         self.users = users
@@ -14,4 +16,4 @@ class AddUser:
         user = self.users[ self.count ]
         self.count += 1
 
-        return  user['name'], user['description']
+        return  user['name'], user['about']

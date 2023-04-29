@@ -2,6 +2,40 @@
 
 Micro Framework
 
+Installez avant de lancer la virtualisation dotenv pour le fichier de configuration d'environnement.
+
+```python
+#
+python3 -m venv venv
+. venv/bin/activate
+
+pip install Flask
+```
+
+Dans l'environnement de développement faites l'inventaire des modules utilisés pour l'application
+
+```bash
+pip list > requirements.txt
+```
+
+## Création de la table à partir d'un modèle
+
+Connectez vous à la base de données pour vérifier que la table a bien été créée avec la commmande Invoke createTable.
+
+Avant tout installez **invoke** qui permet de lancer des tasks en ligne de commande, un autre module **Fabrick** existe également pour déployer l'application sur un serveur distant (CI). 
+
+```bash
+invoke createTable
+```
+
+Puis dans la base de données physique (ficher) :
+
+```bash
+sqlite3 school.sqlite
+sqlite>.table
+users
+```
+
 ## 01 Exercice 
 
 Créez une route users pour afficher les utilisateurs sur une page users.html, utilisez le template "base.html".
@@ -26,7 +60,7 @@ Chaque nom d'user sur la page d'accueil est un lien cliquable qui affiche sa des
 Avec conda vous pouvez installer sqlite
 
 ```python
-conda install sqlite
+pip install sqlite
 ```
 
 Créez la structure de données, dans la base de données (fichier) sqlite.db

@@ -7,9 +7,8 @@
 </head>
 
 <body>
-    <nav>
-        <a href="{{url_for('hello')}}">Home</a>
-    </nav>
+    {% include 'navigation.html' %}
+   
     {% block content %}{% endblock %}
 
 </body>

@@ -2,7 +2,8 @@
 
 {% block content %}
 {% if user %}
-    <p>{{user['description']}}</p>
+    <p>{{user['name']}}</p>
+    <p>{{user['about']}}</p>
 {% else %}
     <p>Aucun user</p>
 {% endif %}
