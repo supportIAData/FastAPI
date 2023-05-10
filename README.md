@@ -52,12 +52,56 @@ Rappelons que dotenv est un module permettant de définir des variables d'enviro
 
 # virtualisation
 python3 -m venv venv
+# le point indique l'endroit où la virtualisation doit s'effectuer
 . venv/bin/activate
 
-pip install Flask
+pip install fastapi
 
 # ORM
-pip install flask_sqlalchemy
+pip install alembic
+pip install mysqlclient
+pip install sqlalchemy
+
+alembic init migrations
+```
+
+Dans ce fichier: **alembic.ini** changez la ligne suivante :
+
+```txt
+
+sqlalchemy.url = mysql://root:root@127.0.0.1/covid
+```
+
+Création d'une migration 
+
+```bash
+alembic revision -m "Create cases table"
+```
+
+Puis dans le fichier de migration 
+
+```python 
+from alembic import op
+import sqlalchemy as sa
+
+# ...
+
+def upgrade():
+    op.create_table(
+      'cases',
+      sa.Column("id", sa.Integer, primary_key=True),
+      sa.Column("name", sa.String(200)),
+      sa.Column("active", sa.Boolean),
+    )
+
+def downgrade():
+    op.drop_table('cases')
+```
+
+Pour créer les tables en base de données
+
+```bash
+alembic upgrade head
 ```
 
 Une fois les dépendances installées dans votre application, créez/re-créez le fichier requirements.txt, il liste les dépendances de l'application.
