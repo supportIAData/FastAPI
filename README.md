@@ -35,16 +35,19 @@ Dépendances et environnement
  pip install python-dotenv
 
 # virtualisation
-python3 -m venv venv
+python -m venv venv
 # le point indique l'endroit où la virtualisation doit s'effectuer
 . venv/bin/activate
 
 pip install fastapi
 
-# ORM
+# dependency
 pip install alembic
 pip install mysqlclient
 pip install sqlalchemy
+pip install jinja2 
+pip install python-dotenv 
+pip install uvicorn
 
 alembic init migrations
 ```
@@ -94,18 +97,8 @@ Une fois les dépendances installées dans votre application, créez/re-créez l
 pip list > requirements.txt
 ```
 
-## Définir des tasks 
-
-Nous allons installer le module **invoke**, il s'utilise avec **Fabrick** un module d'intégration continue. Invoke permet de définir des **tasks** que l'on lancera depuis la console.
+## Lancer le serveur
 
 ```bash
-# Intégration continue
-pip install fabric
-
-# Tasks
-pip install invoke
-```
-
-Pour accéder à l'ensemble de vos routes et explorer votre API :
-
-http://127.0.0.1:8000/docs
+uvicorn app.main:app --reload
+ ```
