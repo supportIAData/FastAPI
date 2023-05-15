@@ -7,11 +7,9 @@ def get_case(db: Session, case_id: int):
 
     return db.query(models.Case).filter(models.Case.id == case_id).first()
 
-
 def get_cases(db: Session, skip: int = 0, limit: int = 100):
 
     return db.query(models.Case).offset(skip).limit(limit).all()
-
 
 def create_case(db: Session, case: schemas.CaseCreate):
     db_case = models.Case(name=case.name)
@@ -20,7 +18,6 @@ def create_case(db: Session, case: schemas.CaseCreate):
     db.refresh(CaseBase)
 
     return CaseBase
-
 
 def create_covid_by_country(db: Session, covid_data: List[schemas.CovidByCountrySchema]):
     for data in covid_data:
